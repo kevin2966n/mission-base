@@ -49,6 +49,7 @@ const Dashboard = ({ tasks, activity, agents, onAgentClick }) => {
     const now = new Date()
     const diffMinutes = Math.floor((now - activityTime) / (1000 * 60))
     
+    if (diffMinutes < 0) return 'just now'
     if (diffMinutes < 60) return `${diffMinutes}m ago`
     const diffHours = Math.floor(diffMinutes / 60)
     if (diffHours < 24) return `${diffHours}h ago`

@@ -5,9 +5,7 @@ import ActivityLog from './components/ActivityLog'
 import AgentDetail from './components/AgentDetail'
 import './App.css'
 
-const API_URL = import.meta.env.PROD 
-  ? 'https://mission-base.srv1193525.hstgr.cloud/api' 
-  : 'http://localhost:4800/api'
+const API_URL = import.meta.env.VITE_API_URL || '/api'
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard')
